@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CodeNow | ONAC</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="title-container">
+        <h1 class="main-title">CodeNow</h1>
+        <span class="alpha-badge">ALPHA</span>
+    </div>
+    
+    <div class="search-container">
+        <input type="text" 
+               class="search-box" 
+               placeholder="Buscar cursos..." 
+               id="searchCourses">
+        <div class="stats-container">
+            <span class="course-count">
+                <span id="courseCount">4</span> cursos disponibles
+            </span>
+        </div>
+    </div>
+    
+    <div class="courses-grid" id="coursesGrid">
+        <!-- Python Card -->
+        <a href="under-construction.html" class="course-card" data-language="python">
+            <img src="assets/svg/python.svg" alt="Python">
+            <h2>Python</h2>
+            <p>El lenguaje perfecto para comenzar en la programación</p>
+        </a>
+
+        <!-- JavaScript Card -->
+        <a href="under-construction.html" class="course-card" data-language="javascript">
+            <img src="assets/svg/javascript.svg" alt="JavaScript">
+            <h2>JavaScript</h2>
+            <p>Domina el lenguaje de la web moderna</p>
+        </a>
+
+        <!-- HTML5 Card -->
+        <a href="under-construction.html" class="course-card" data-language="html">
+            <img src="assets/svg/html5.svg" alt="HTML5">
+            <h2>HTML5</h2>
+            <p>Construye la estructura de sitios web</p>
+        </a>
+
+        <!-- CSS3 Card -->
+        <a href="under-construction.html" class="course-card" data-language="css">
+            <img src="assets/svg/css3.svg" alt="CSS3">
+            <h2>CSS3</h2>
+            <p>Da estilo y diseño a tus páginas web</p>
+        </a>
+    </div>
+
+    <script>
+        // Funcionalidad de búsqueda
+        const searchBox = document.getElementById('searchCourses');
+        const coursesGrid = document.getElementById('coursesGrid');
+        const courseCards = document.querySelectorAll('.course-card');
+        const courseCount = document.getElementById('courseCount');
+
+        searchBox.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            let visibleCourses = 0;
+
+            courseCards.forEach(card => {
+                const title = card.querySelector('h2').textContent.toLowerCase();
+                const description = card.querySelector('p').textContent.toLowerCase();
+                const isVisible = title.includes(searchTerm) || description.includes(searchTerm);
+                
+                card.style.display = isVisible ? 'flex' : 'none';
+                if (isVisible) visibleCourses++;
+            });
+
+            courseCount.textContent = visibleCourses;
+        });
+    </script>
+</body>
+
+</html>
