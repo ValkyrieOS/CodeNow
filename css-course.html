@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de CSS | CodeNow</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .course-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            width: 100%;
+        }
+
+        .section {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 25px;
+            border: 2px solid rgba(102, 51, 153, 0.1);
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+
+        .section:hover {
+            border-color: var(--css-color);
+            box-shadow: 0 5px 20px rgba(102, 51, 153, 0.2);
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: var(--card-bg);
+            color: var(--css-color);
+            text-decoration: none;
+            border-radius: 50px;
+            margin-bottom: 30px;
+            border: 2px solid var(--css-color);
+            transition: all 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: var(--css-color);
+            color: var(--primary-bg);
+            transform: translateY(-2px);
+        }
+
+        .code-example {
+            background-color: var(--primary-bg);
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Consolas', monospace;
+            margin: 15px 0;
+            border: 1px solid rgba(102, 51, 153, 0.2);
+            color: #fff;
+            overflow-x: auto;
+        }
+
+        .practice-button {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: var(--css-color);
+            color: var(--text-primary);
+            text-decoration: none;
+            border-radius: 50px;
+            margin-top: 15px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .practice-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 51, 153, 0.3);
+        }
+
+        .topic-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .topic-list li {
+            margin-bottom: 15px;
+            padding-left: 25px;
+            position: relative;
+            color: #999;
+        }
+
+        .topic-list li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--css-color);
+        }
+
+        h1, h2 {
+            color: var(--css-color);
+            margin-bottom: 15px;
+        }
+
+        p {
+            color: #999;
+            line-height: 1.6;
+        }
+
+        a {
+            color: var(--css-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #fff;
+        }
+
+        ol {
+            padding-left: 20px;
+            color: #999;
+        }
+
+        ol li {
+            margin-bottom: 10px;
+        }
+
+        .example-container {
+            background: var(--primary-bg);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+
+        .demo-box {
+            width: 100px;
+            height: 100px;
+            background: var(--css-color);
+            margin: 10px;
+            transition: all 0.3s ease;
+        }
+
+        @media (max-width: 768px) {
+            .course-content {
+                padding: 15px;
+            }
+
+            .section {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            h2 {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="course-content">
+        <a href="index.html" class="back-button">← Volver al inicio</a>
+        
+        <div class="section">
+            <h1>Curso de CSS</h1>
+            <p>Bienvenido al curso de CSS. Aprenderás a dar estilo y diseño a tus páginas web, desde lo básico hasta técnicas avanzadas de diseño.</p>
+        </div>
+
+        <div class="section">
+            <h2>¿Qué es CSS?</h2>
+            <p>CSS (Cascading Style Sheets) es el lenguaje utilizado para estilizar y dar formato a documentos HTML. Controla el diseño, layout y la presentación de las páginas web.</p>
+        </div>
+
+        <div class="section">
+            <h2>Contenido del curso</h2>
+            <ul class="topic-list">
+                <li>Selectores y propiedades básicas</li>
+                <li>Modelo de caja y layout</li>
+                <li>Flexbox y Grid</li>
+                <li>Colores y gradientes</li>
+                <li>Tipografía y textos</li>
+                <li>Animaciones y transiciones</li>
+                <li>Responsive Design</li>
+                <li>Variables CSS</li>
+                <li>Técnicas modernas de diseño</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Tu primer estilo CSS</h2>
+            <p>Veamos un ejemplo simple de cómo dar estilo a un elemento:</p>
+            <div class="code-example">
+                .mi-elemento {
+                    background-color: #663399;
+                    color: white;
+                    padding: 20px;
+                    border-radius: 8px;
+                    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+                }
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Ejemplo práctico</h2>
+            <p>Aquí tienes un ejemplo de diferentes propiedades CSS:</p>
+            <div class="example-container">
+                <div class="demo-box" style="border-radius: 50%;" title="Círculo"></div>
+                <div class="demo-box" style="transform: rotate(45deg);" title="Rotación"></div>
+                <div class="demo-box" style="opacity: 0.7;" title="Transparencia"></div>
+            </div>
+            <p>Pasa el cursor sobre los elementos para ver diferentes efectos.</p>
+        </div>
+
+        <div class="section">
+            <h2>Recursos adicionales</h2>
+            <ul class="topic-list">
+                <li><a href="https://developer.mozilla.org/es/docs/Web/CSS" target="_blank">MDN Web Docs - CSS</a></li>
+                <li><a href="https://css-tricks.com" target="_blank">CSS-Tricks</a></li>
+                <li><a href="https://www.w3schools.com/css/" target="_blank">W3Schools CSS Tutorial</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Añadir interactividad a los demo-boxes
+        document.querySelectorAll('.demo-box').forEach(box => {
+            box.addEventListener('mouseover', () => {
+                box.style.transform = 'scale(1.1)';
+            });
+            box.addEventListener('mouseout', () => {
+                box.style.transform = '';
+            });
+        });
+    </script>
+</body>
+</html> 
